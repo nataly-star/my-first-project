@@ -14,3 +14,9 @@ gulp.task('autoprefixer', function(){
         .pipe(gulp.dest('app/css'))
 });
 
+gulp.task('watch', ['autoprefixer'], function(){
+	gulp.watch('source/css/style.css', ['autoprefixer']);
+});
+
+gulp.task('default', ['watch']);
+

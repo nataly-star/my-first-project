@@ -21,6 +21,12 @@ a {
 	color: inherit;
 }
 
+a:hover,
+a:focus {
+	text-decoration: none;
+}
+
+
 ul, ol {
 	margin: 0;
 	padding: 0;
@@ -29,6 +35,26 @@ ul, ol {
 
 main .container {
 	margin-top: 50px;
+}
+
+.btn:focus,
+.btn:active, 
+.btn:active:focus, 
+.btn.active:focus, 
+.btn.focus, 
+.btn:active.focus, 
+.btn.active.focus {
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: inherit;
+}
+
+.btn-link:hover, 
+.btn-link:focus {
+    color: #23527c;
+  	text-decoration: none;
+    background-color: transparent;
 }
 
 #header {
@@ -452,9 +478,15 @@ main .container {
 }
 
 #footer ul li {
+	display: inline-block;
     color: #fff;
-    font-size: 15px;
     text-transform: uppercase;
+}
+
+#footer ul li a {
+	display: block;
+	padding: 20px 10px;
+	font-size: 15px;
 }
 
 .fab {
@@ -462,26 +494,21 @@ main .container {
 	color: #ccc;
 }
 
+@media (max-width: 400px) {
+	#footer ul li a {
+		display: none;
+	}
+	#footer {
+		height: 90px;
+	}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 488px) {
+	#footer ul li a {
+		padding: 20px 5px;
+		font-size: 13px;
+	}
+}
 
 @media (max-width: 767px) {
 	.navbar-nav .open .dropdown-menu {
@@ -531,3 +558,4 @@ main .container {
   .active > div:first-child + div + div { display:block; }
 	.active > div:first-child + div + div + div { display:block; }
 }
+
